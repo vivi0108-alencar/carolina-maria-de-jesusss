@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://btw0y3ncgfblf"]
+
+[ext_resource type="Script" uid="uid://bbp1gqdxsn4on" path="res://atividade2/node_2d.gd" id="1_qr1n1"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_qr1n1")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 352.0
+offset_bottom = 250.0
+text = "testar"
+
+[connection signal="pressed" from="Button" to="Node2D" method="_on_button_pressed"]
