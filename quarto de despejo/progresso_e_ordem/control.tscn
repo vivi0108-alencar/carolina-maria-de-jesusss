@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvdu2w1uwb384"]
+
+[ext_resource type="Script" uid="uid://l3ypw3xmulom" path="res://control.gd" id="1_lybqh"]
+[ext_resource type="Texture2D" uid="uid://ddt26nsikjvmx" path="res://progresso_e_ordem/circle-regular-full.svg" id="2_n7vf0"]
+[ext_resource type="Texture2D" uid="uid://dfpimipppqigb" path="res://progresso_e_ordem/circle-regular-full (1).svg" id="3_cg5xc"]
+
+[sub_resource type="Curve" id="Curve_urqj6"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.596591, -56.1797), 0.0, 0.0, 0, 0, Vector2(1, -191.011), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_2ggvq"]
+_data = [Vector2(0.153409, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0224719), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_unb07"]
+offsets = PackedFloat32Array(0, 0.28, 0.886667)
+colors = PackedColorArray(0, 0, 0, 1, 0.833751, 0.84913, 0, 1, 1, 1, 1, 1)
+
+[node name="Atividade18" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -2.0
+offset_right = -25.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lybqh")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 12.0
+offset_right = 702.0
+offset_bottom = 652.0
+scale = Vector2(0.7, 0.7)
+fill_mode = 4
+texture_under = ExtResource("2_n7vf0")
+texture_progress = ExtResource("3_cg5xc")
+
+[node name="Label" type="Label" parent="TextureProgressBar"]
+layout_mode = 0
+offset_left = 224.286
+offset_top = 118.571
+offset_right = 405.286
+offset_bottom = 527.571
+theme_override_font_sizes/font_size = 300
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TextureProgressBar"]
+layout_mode = 0
+offset_left = 552.857
+offset_top = 481.429
+offset_right = 1436.86
+offset_bottom = 686.429
+theme_override_font_sizes/font_size = 150
+text = "laura e toria"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 126.0
+offset_right = 745.0
+offset_bottom = 239.0
+text = "+50tinha"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(290, 239)
+emitting = false
+amount = 200
+lifetime = 2.05
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+radial_accel_max = 25.0
+radial_accel_curve = SubResource("Curve_urqj6")
+scale_amount_min = 8.0
+scale_amount_max = 16.0
+scale_amount_curve = SubResource("Curve_2ggvq")
+color = Color(1, 1, 0, 1)
+color_initial_ramp = SubResource("Gradient_unb07")
+
+[connection signal="changed" from="TextureProgressBar" to="." method="_on_texture_progress_bar_changed"]
+[connection signal="value_changed" from="TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
