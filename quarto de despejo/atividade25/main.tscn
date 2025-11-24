@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmshpleoel0x3"]
+
+[ext_resource type="Texture2D" uid="uid://ndcgtbisq4w6" path="res://atividade25/grass.png" id="1_1xu4a"]
+[ext_resource type="PackedScene" uid="uid://cchx85yilt44q" path="res://atividade25/player.tscn" id="2_q758b"]
+
+[node name="main" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1xu4a")
+stretch_mode = 1
+
+[node name="player" parent="TextureRect" instance=ExtResource("2_q758b")]
