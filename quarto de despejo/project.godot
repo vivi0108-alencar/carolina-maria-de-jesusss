@@ -17,6 +17,8 @@ config/icon="res://atividade2/icon.svg"
 
 [display]
 
+window/size/viewport_width=480
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 
 [input]
