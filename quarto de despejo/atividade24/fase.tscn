@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0dmvwba0fyvb"]
+
+[ext_resource type="PackedScene" uid="uid://cqnjt238yptky" path="res://atividade23/animal.tscn" id="1_8dvh5"]
+[ext_resource type="PackedScene" uid="uid://bm254kt7xwfjh" path="res://atividade24/ovelha.tscn" id="2_7voow"]
+[ext_resource type="PackedScene" uid="uid://il0sakun4f8a" path="res://atividade24/obstaculo.tscn" id="3_gb6mf"]
+[ext_resource type="PackedScene" uid="uid://c7kr623kleuxr" path="res://atividade24/obstaculo_2.tscn" id="4_tvx3i"]
+
+[node name="fase" type="Node2D"]
+
+[node name="animal" parent="." instance=ExtResource("1_8dvh5")]
+position = Vector2(119, 114)
+
+[node name="ovelha" parent="." instance=ExtResource("2_7voow")]
+position = Vector2(292, 98)
+
+[node name="obstaculo" parent="." instance=ExtResource("3_gb6mf")]
+position = Vector2(245, 266)
+
+[node name="obstaculo2" parent="." instance=ExtResource("4_tvx3i")]
+position = Vector2(419, 174)

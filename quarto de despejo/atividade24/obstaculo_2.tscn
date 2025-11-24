@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7kr623kleuxr"]
+
+[ext_resource type="Texture2D" uid="uid://ckj0e8j0pdwqw" path="res://atividade24/PNG/Assets_texture_shadow/White_crystal1.png" id="1_pwp1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34vyc"]
+atlas = ExtResource("1_pwp1c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wks1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34vyc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lr4qj"]
+radius = 27.2947
+
+[node name="obstaculo2" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2wks1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lr4qj")
